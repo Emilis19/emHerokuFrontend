@@ -4,7 +4,7 @@ node_js:
 cache: yarn
 
 services:
-  - chrome: stable
+    chrome: stable
 
 before_install:
     - # start your web application and listen on `localhost`
@@ -12,7 +12,7 @@ before_install:
   
 script:
 - yarn lint
-- yarn test --watch=false --browsers=ChromeHeadless
 - yarn build --prod
+- yarn test --watch=false --browsers=ChromeHeadless
 - yarn run e2e
 - yarn serve
