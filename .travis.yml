@@ -1,14 +1,12 @@
-addons:
-    chrome: stable
+  
 language: node_js
 node_js:
-  - "11"  
+  - "11"
 cache: yarn
 script:
 - yarn lint
 - yarn test --watch=false --browsers=ChromeHeadless
-- ng e2e --baseUrl=localhost:4201 --webdriverUpdate=true
+- yarn webdriver-update
+- yarn webdriver-start
+- yarn ci-e2e
 - yarn build --prod
-before_install:
-    - # start your web application and listen on `localhost`
-    - google-chrome-stable --headless --disable-gpu
