@@ -2,7 +2,17 @@ language: node_js
 node_js:
   - "11"
 cache: yarn
+
+services:
+  - chrome: stable
+
+before_install:
+    - # start your web application and listen on `localhost`
+    - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9876 http://localhost &  
+  
 script:
 - yarn lint
 - yarn test --watch=false --browsers=ChromeHeadless
 - yarn build --prod
+- yarn run e2e
+- yarn serve
