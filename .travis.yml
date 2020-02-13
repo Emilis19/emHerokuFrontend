@@ -13,6 +13,6 @@ before_install:
 script:
 - yarn lint
 - yarn build --prod
-- yarn test --watch=false --browsers=ChromeHeadless
 - yarn run e2e
+- yarn test --watch=false --browsers=ChromeHeadless
 - yarn serve
