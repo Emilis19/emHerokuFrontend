@@ -7,7 +7,7 @@ cache: yarn
 script:
 - yarn lint
 - yarn test --watch=false --browsers=ChromeHeadless
-- yarn e2e --baseUrl=localhost:4201 -webdriverUpdate=true
+- ng e2e --baseUrl=localhost:4201 --webdriverUpdate=true
 - yarn build --prod
 before_install:
     - # start your web application and listen on `localhost`
